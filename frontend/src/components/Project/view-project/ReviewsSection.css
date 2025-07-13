@@ -1,0 +1,39 @@
+.reviews-section {
+  margin: 30px 0;
+}
+
+.review {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.review img {
+  border-radius: 50%;
+  width: 40px;
+}
+
+.review .username {
+  font-weight: bold;
+}
+
+.review .time {
+  font-size: 12px;
+  color: gray;
+}
+
+input {
+  margin-top: 10px;
+  padding: 8px;
+  width: 70%;
+}
+
+button {
+  margin-left: 10px;
+  padding: 8px 12px;
+}
+
+.actions span {
+  margin-right: 15px;
+  cursor: pointer;
+}

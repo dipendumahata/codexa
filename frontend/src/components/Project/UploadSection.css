@@ -1,0 +1,88 @@
+.upload-section {
+  padding: 40px;
+  background-color: #f5f8fd;
+}
+
+.upload-content h1 {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.upload-content p {
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.upload-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.upload-section {
+  padding: 60px 20px;
+  background-color: #f5f8fd;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.upload-content {
+  max-width: 800px;
+}
+
+.upload-content h1 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: #1f2937;
+}
+
+.upload-content p {
+  font-size: 18px;
+  color: #4b5563;
+  margin-bottom: 24px;
+}
+
+.upload-button {
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  padding: 14px 24px;
+  font-weight: 500;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.upload-button:hover {
+  background-color: #1d4ed8;
+}
+
+/* Animation classes */
+.animated {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.8s forwards;
+}
+
+.delay-1 {
+  animation-delay: 0.2s;
+}
+
+.delay-2 {
+  animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}

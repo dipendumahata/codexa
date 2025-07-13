@@ -1,0 +1,8 @@
+.desc-section {
+  margin: 20px 0;
+}
+
+.desc-section ul {
+  list-style: disc;
+  padding-left: 20px;
+}

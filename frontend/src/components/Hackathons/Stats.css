@@ -1,0 +1,43 @@
+* Stats.css */
+.stats {
+  flex: 1;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.stats h2 {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  color: #2c2c7c;
+}
+.participant {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-top: 1rem;
+  padding: 1rem;
+  background: #f8faff;
+  border-radius: 10px;
+}
+.participant img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.participant div {
+  flex: 1;
+}
+
+@media (max-width: 768px) {
+  .stats {
+    width: 100%;
+  }
+  .participant {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .participant img {
+    margin-bottom: 0.5rem;
+  }
+}

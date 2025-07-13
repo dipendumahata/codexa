@@ -1,0 +1,164 @@
+
+.project-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 24px;
+  margin: 20px auto;
+  width: 95%;
+  max-width: 1100px;
+  min-height: 180px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.project-header {
+  display: flex;
+  gap: 20px;
+  align-items: flex-start;
+  flex: 1;
+}
+
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #ccc;
+}
+
+.project-info h3 {
+  font-size: 20px;
+  font-weight: 600;
+  padding-top: 1rem;
+  margin: 0;
+  color: #111827;
+}
+
+.project-info p {
+  font-size: 15px;
+  color: #6b7280;
+  margin: 6px 0 8px 0;
+}
+
+.project-owner {
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  gap: 10px;
+  font-size: 14px;
+  color: #374151;
+}
+
+.project-owner img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid #e5e7eb;
+}
+
+.owner-meta {
+  display: flex;
+  flex-direction: column;
+}
+
+.owner-name {
+  font-weight: 500;
+  color: #111827;
+  font-size: 14px;
+}
+
+.owner-role {
+  font-size: 12px;
+  color: #6b7280;
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #6b7280;
+  flex-wrap: wrap;
+  margin-top: 15px;
+}
+
+.star {
+  color: #f59e0b;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.tags {
+  font-size: 12px;
+  background-color: #f3f4f6;
+  padding: 4px 10px;
+  border-radius: 6px;
+  color: #4b5563;
+}
+
+.project-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.purchase-btn,
+.view-btn {
+  font-size: 14px;
+  padding: 8px 14px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+}
+
+.purchase-btn {
+  background-color: #2563eb;
+  color: white;
+  border: 1px solid transparent;
+}
+
+.purchase-btn:hover {
+  background-color: #1e40af;
+}
+
+.view-btn {
+  background-color: #f0f9ff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+}
+
+.view-btn:hover {
+  background-color: #dbeafe;
+}
+
+.like-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 20px;
+  padding-top: 6px;
+  color: #ef4444;
+}
+
+@media (max-width: 640px) {
+  .project-card {
+    flex-direction: column;
+    /* align-items: flex-start; */
+    align-items: flex-start;
+    padding: 16px;
+  }
+
+  .project-actions {
+    flex-direction: row;
+    width: 100%;
+    justify-content: center;
+    margin-top: 12px;
+  }
+}

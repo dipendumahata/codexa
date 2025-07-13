@@ -1,0 +1,8 @@
+.app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9faff;
+  color: #1a1a1a;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}

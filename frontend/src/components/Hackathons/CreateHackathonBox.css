@@ -1,0 +1,36 @@
+.hackathon-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #2c2c7c;
+  background-color: #e0f7ff; /* Light sky blue */
+  border-radius: 12px;
+  padding: 1.2rem 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.quote-text {
+  font-size: 1.1rem;
+  color: #000;
+  margin: 0.5rem 0;
+  flex: 1;
+}
+
+.create-button {
+  padding: 0.6rem 1.2rem;
+  background-color: white;
+  color: black;
+  border: 1px solid #2c2c7c;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.create-button:hover {
+  background-color: #2c2c7c;
+  color: white;
+  transform: scale(1.05);
+}

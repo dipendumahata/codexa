@@ -1,0 +1,12 @@
+.project-detail-container {
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
+  background: #f0f4f8;
+}
+
+.details-columns {
+  display: flex;
+  justify-content: space-between;
+  gap: 30px;
+}

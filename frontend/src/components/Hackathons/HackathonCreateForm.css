@@ -1,0 +1,177 @@
+form.hackathon-form {
+  background: #ffffff;
+  padding: 3rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin: 3rem auto;
+  max-width: 900px;
+  width: calc(100% - 2rem);
+  animation: dramaticFadeIn 1s ease-out forwards;
+  transition: all 0.3s ease-in-out;
+  overflow-x: hidden;
+}
+
+@keyframes dramaticFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(80px) scale(0.95) rotateX(15deg);
+  }
+  60% {
+    transform: translateY(-10px) scale(1.02) rotateX(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1) rotateX(0deg);
+  }
+}
+
+.hackathon-form h2 {
+  text-align: center;
+  color: #2c2c7c;
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  animation: fadeUp 1s ease-out;
+}
+
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hackathon-form input,
+.hackathon-form textarea,
+.hackathon-form button {
+  width: 100%;
+  padding: 0.9rem 1rem;
+  border-radius: 12px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s ease;
+  background-color: #f9f9f9;
+  max-width: 100%;
+  box-sizing: border-box;
+  animation: fadeSlideIn 0.7s ease-out;
+}
+
+@keyframes fadeSlideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.hackathon-form input:focus,
+.hackathon-form textarea:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 10px rgba(124, 58, 237, 0.3);
+  transform: scale(1.01);
+}
+
+.hackathon-form textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.hackathon-form input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.5rem;
+}
+
+.hackathon-form label {
+  font-weight: 500;
+  color: #333;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  animation: fadeUp 0.8s ease-out;
+}
+
+.hackathon-form button {
+  background: linear-gradient(to right, #6e32ec, #aa3fff);
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  animation: fadeSlideIn 0.8s ease-out;
+}
+
+.hackathon-form button:hover {
+  background: linear-gradient(to right, #5a26c5, #8f35d4);
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.hackathon-form h4 {
+  margin-top: 2rem;
+  color: #2c2c7c;
+  font-size: 1.4rem;
+  font-weight: 600;
+  animation: fadeUp 1s ease-out;
+}
+
+.faq-inputs {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+  background: #f5f7ff;
+  padding: 1rem;
+  border-radius: 12px;
+  border: 1px solid #e2e8f0;
+  overflow-x: auto;
+  animation: fadeSlideIn 0.8s ease-out;
+}
+
+@media (max-width: 768px) {
+  form.hackathon-form {
+    padding: 2rem 1rem;
+    width: 95%;
+  }
+
+  .hackathon-form h2 {
+    font-size: 1.8rem;
+  }
+
+  .hackathon-form input,
+  .hackathon-form textarea,
+  .hackathon-form button {
+    font-size: 0.95rem;
+    padding: 0.85rem 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  form.hackathon-form {
+    padding: 1.5rem 1rem;
+    border-radius: 16px;
+    width: 95%;
+  }
+
+  .hackathon-form button {
+    padding: 0.8rem;
+    font-size: 0.95rem;
+  }
+
+  .hackathon-form h2 {
+    font-size: 1.6rem;
+  }
+}
