@@ -3,6 +3,7 @@ import './HeroSection.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 const API_URL = import.meta.env.VITE_API_URL;
+import heroImage from '../assets/hero1.png';
 
 function HeroSection() {
   const [isLoggedIn,setIsLoggedIn]=useState(false);
@@ -58,7 +59,7 @@ function HeroSection() {
         </div>
         <div className="hero-image">
           <div className="image-placeholder">
-            <img src="src\assets\hero1.png" alt="Showcase project" />
+            <img src={heroImage} alt="Showcase project" />
           </div>
         </div>
       </div>
