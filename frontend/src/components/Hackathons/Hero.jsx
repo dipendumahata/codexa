@@ -12,7 +12,7 @@ export default function Hero() {
         </p>
         <button className="browse-btn">Browse Competitions</button>
       </div>
-     <img src={heroImage} alt="Heroes" />
+      <img className="hero-image" src={heroImage} alt="Hero" />
     </section>
   );
 }
