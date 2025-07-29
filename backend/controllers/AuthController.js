@@ -126,8 +126,8 @@ const signin = async (req, res) => {
     // Set token in HTTP-only cookie
     res.cookie("token", token, {
       httpOnly: true,
-      secure: process.env.NODE_ENV === "production",
-      sameSite: "Lax",
+      secure: true,
+      sameSite: "None",
     });
 
     // Send user data back

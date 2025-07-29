@@ -16,19 +16,17 @@ const app = express();
 connectDb();
 app.use(express.json());
 
-// ✅ Allowed Origins (Local + Production)
 const allowedOrigins = [
   "http://localhost:5173",
   "https://code-bazaar-student-project-showcas.vercel.app"
 ];
 
-// ✅ CORS Config
-app.use(
-  cors({
-    origin: allowedOrigins,
-    credentials: true
-  })
-);
+app.use(cors({
+  origin: allowedOrigins,
+  credentials: true,
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 
 // ✅ Parse cookies
 app.use(cookieParser());
