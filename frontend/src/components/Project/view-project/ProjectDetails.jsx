@@ -34,7 +34,7 @@ const ProjectDetails = () => {
     <div className="project-detail-container">
       <ProjectCard project={project} />
 
-      <PriceOptions />
+      <PriceOptions project={project} />
 
       <div className="details-columns">
         <DescriptionSection />
