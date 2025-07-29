@@ -3,6 +3,9 @@ import './Navbar.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+const API_URL = import.meta.env.VITE_API_URL;
+
+
 function Navbar({ user, setuser }) {
   const navigate = useNavigate();
 
@@ -15,7 +18,7 @@ function Navbar({ user, setuser }) {
     if (!confirmLogout) return;
 
     try {
-      await axios.get("/api/logout", { withCredentials: true });
+      await axios.get(`${API_URL}/api/logout`, { withCredentials: true });
       setuser(null);
       navigate('/');
       alert("Logout Successfully!!");

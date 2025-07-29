@@ -7,6 +7,7 @@ import DescriptionSection from "./DescriptionSection";
 import LearningSection from "./LearningSection";
 import ReviewsSection from "./ReviewsSection";
 import "./ProjectDetails.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 const ProjectDetails = () => {
   const { id } = useParams(); // ✅ Fetch the project ID from the URL
@@ -15,7 +16,7 @@ const ProjectDetails = () => {
 
   useEffect(() => {
     axios
-      .get(`/api/projects/${id}`,{withCredentials:true})
+      .get(`${API_URL}/api/projects/${id}`,{withCredentials:true})
       .then((res) => {
         setProject(res.data);
         setLoading(false);

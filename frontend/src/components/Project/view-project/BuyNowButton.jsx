@@ -1,13 +1,15 @@
 // BuyNowButton.jsx
 import React from "react";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 function BuyNowButton({ project }) {
   const handlePayment = async () => {
     try {
       // 🔥 1. Send selected price to backend
       const { data } = await axios.post(
-        "/api/payment/create-order",
+       `${API_URL}/api/payment/create-order`,
         { amount: project.price },
         { withCredentials: true }
       );

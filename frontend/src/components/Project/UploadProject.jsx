@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./UploadProject.css";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function UploadProject() {
   const [form, setForm] = useState({
@@ -22,17 +23,18 @@ function UploadProject() {
       data.append("title", form.title);
       data.append("description", form.description);
       data.append("price", form.price);
-      data.append("owner", form.owner);
+      data.append("owner", ownerId);
       data.append("tags", form.tags);
       data.append("learning", form.learning);
       data.append("logoImage", logo);
       data.append("coverImage", cover);
       data.append("stars", Math.floor(Math.random() * 300));
 
-      await axios.post("/api/projects/uploadproject", data,{
+      await axios.post(`${API_URL}/api/check-auth-status`, data,{
         headers:{
           "Content-Type":"multipart/form-data",
-        }
+        },
+        withCredentials:true
       });
 
       alert("Project uploaded successfully!");

@@ -14,13 +14,19 @@ import ProjectCard from "./components/Project/ProjectCard";
 import AllProject from "./components/Project/App"
 import ProjectCardPage from "./components/Project/ProjectCardPage";
 import ProjectDetails from "./components/Project/view-project/ProjectDetails";
+
+
+const API_URL = import.meta.env.VITE_API_URL;
+
+
+
 function App() {
   const [user, setuser] = useState(null);
   const [tutorials, setTutorials] = useState([]);
 
   const getuser = async () => {
     try {
-      const res = await axios.get("/api/me", { withCredentials: true });
+      const res = await axios.get(`${API_URL}/api/me`, { withCredentials: true });
       setuser(res.data);
     } catch (err) {
       console.error("User fetch failed:", err.message);
@@ -29,7 +35,7 @@ function App() {
 
   const fetchTutorials = async () => {
     try {
-      const res = await axios.get("/api/photos", { withCredentials: true });
+      const res = await axios.get(`${API_URL}/api/photos`, { withCredentials: true });
       setTutorials(res.data);
     } catch (err) {
       console.error("Tutorial fetch failed:", err.message);

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import './HeroSection.css';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function HeroSection() {
   const [isLoggedIn,setIsLoggedIn]=useState(false);
@@ -14,8 +15,8 @@ function HeroSection() {
   useEffect(()=>{
     const checkLoginStutes=async()=>{
       try {
-        const response= await axios.get("/api/check-auth-status",{
-          withCredentials:true // this is import so that brower request only http request
+        const response= await axios.get(`${API_URL}/api/check-auth-status`,{
+          withCredentials:true,
         })
         if(response.data.isLoggedIn){
           setIsLoggedIn(true);

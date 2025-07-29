@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import axios from "axios";
 import "./HackathonCreateForm.css";
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const HackathonCreateForm = () => {
   const [form, setForm] = useState({
@@ -70,7 +72,7 @@ const HackathonCreateForm = () => {
     });
 
     try {
-      await axios.post("/api/hackathons", formData, {
+      await axios.post(`${API_URL}/api/hackathons`, formData, {
         withCredentials: true,
         headers: { "Content-Type": "multipart/form-data" },
       });

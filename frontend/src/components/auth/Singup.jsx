@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Signup.css";
 import axios from "axios";
+const API_URL = import.meta.env.VITE_API_URL;
 
 function Signup() {
   const navigate = useNavigate();
@@ -52,10 +53,11 @@ function Signup() {
     data.append("role", role);
 
     try {
-      const response = await axios.post("/api/signup", data, {
+      const response = await axios.post(`${API_URL}/api/signup`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
+        withCredentials:true
       });
 
       console.log("Server Response:", response.data);

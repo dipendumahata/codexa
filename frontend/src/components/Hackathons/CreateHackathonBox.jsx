@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import "./CreateHackathonBox.css";
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
+
 function CreateHackathonBox() {
   const [isLoggedIn,setIsLoggedIn]=useState(false);
   const [isLoading,setIsLoading]=useState(true);
@@ -10,7 +12,7 @@ function CreateHackathonBox() {
     useEffect(() => {
   const checklogin = async () => {
     try {
-      const response = await axios.get("/api/check-auth-status", {
+      const response = await axios.get(`${API_URL}/api/check-auth-status`, {
         withCredentials: true,
       });
       if (response.data.isLoggedIn) {

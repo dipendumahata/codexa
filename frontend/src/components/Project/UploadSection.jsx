@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import './UploadSection.css';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';  
+
+const API_URL = import.meta.env.VITE_API_URL;
 
 const UploadSection = () => {
   const [isLoggedIn,setIsLoggedIn]=useState(false);
@@ -10,7 +13,7 @@ const UploadSection = () => {
     useEffect(() => {
   const checklogin = async () => {
     try {
-      const response = await axios.get("/api/check-auth-status", {
+      const response = await axios.get(`${API_URL}/api/check-auth-status`, {
         withCredentials: true,
       });
       if (response.data.isLoggedIn) {

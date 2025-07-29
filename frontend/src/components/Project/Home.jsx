@@ -2,6 +2,8 @@ import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import ProjectCard from './ProjectCard';
 import './Home.css';
+const API_URL = import.meta.env.VITE_API_URL;
+
 
 const Home = () => {
   const [projects, setProjects] = useState([]);
@@ -9,7 +11,7 @@ const Home = () => {
 
   const fetchProjects = async () => {
     try {
-      const response = await axios.get('/api/projects/getallprojects');
+      const response = await axios.get(`${API_URL}/api/projects/getallprojects`);
       setProjects(response.data);
     } catch (error) {
       console.error('Error fetching projects:', error);

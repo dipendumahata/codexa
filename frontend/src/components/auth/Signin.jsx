@@ -1,42 +1,40 @@
 import React, { useState } from "react";
 import "../auth/Signin.css";
-import { Link } from "react-router-dom"; // Make sure you're using react-router
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 
+const API_URL = import.meta.env.VITE_API_URL; // Base API URL from env
 
-function Signin({setuser}) {
-    const navigate=useNavigate();
+function Signin({ setuser }) {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: "",
     password: "",
   });
 
   const handleChange = (e) => {
-    setFormData({ 
-      ...formData, 
-      [e.target.name]: e.target.value 
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value,
     });
   };
 
-  const handleSubmit =async (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-        const res= await axios.post("/api/signin",formData,
-              { withCredentials: true } // 👈 required for cookies
-        );
-        console.log("Login Successfull!! ",res.data)
-        setuser(res.data.user)
-        alert("Login Successfull!!")
-        navigate("/")
-      
-        
+      const res = await axios.post(
+        `${API_URL}/api/signin`, // Use full URL
+        formData,
+        { withCredentials: true } // Required for cookies (JWT)
+      );
+      console.log("Login Successfull!! ", res.data);
+      setuser(res.data.user);
+      alert("Login Successful!!");
+      navigate("/");
     } catch (error) {
-     console.error('Login Failed:', error.response?.data || error.message);
-
-      alert('Login failed');
+      console.error("Login Failed:", error.response?.data || error.message);
+      alert("Login failed");
     }
-    console.log("Sign In Data:", formData);
   };
 
   return (
@@ -66,7 +64,6 @@ function Signin({setuser}) {
 
         <button type="submit">Sign In</button>
 
-        {/* Signup Link styled as button */}
         <Link to="/signup" className="signup-link-button">
           Not registered? Click here
         </Link>

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './ProjectsShowcase.css';
 import axios from 'axios';
+const API_URL = import.meta.env.VITE_API_URL;
 
 function ProjectsShowcase() {
   const [projects, setProject] = useState([]);
@@ -8,7 +9,7 @@ function ProjectsShowcase() {
   useEffect(() => {
     const fetchPosts = async () => {
       try {
-        const response = await axios.get("/api/projects/getallprojects", {
+        const response = await axios.get(`${API_URL}/api/projects/getallprojects`, {
           withCredentials: true,
         });
 

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Tutorials.css";
 import axios from "axios";
-
+const API_URL = import.meta.env.VITE_API_URL;
 function Tutorials({ tutorials, setTutorials, user }) {
   const handleDelete = async (id) => {
     const confirmDelete = window.confirm(
@@ -10,7 +10,7 @@ function Tutorials({ tutorials, setTutorials, user }) {
     if (!confirmDelete) return;
 
     try {
-      await axios.delete(`/api/photos/${id}`, { withCredentials: true });
+      await axios.delete(`${API_URL}/api/photos/${id}`, { withCredentials: true });
       setTutorials((prev) => prev.filter((t) => t._id !== id));
       alert("Tutorial deleted.");
     } catch (err) {
