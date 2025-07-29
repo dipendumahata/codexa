@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 import heroImage from '../../assets/hero1.png';
+
 export default function Hero() {
   return (
     <section className="hero">
@@ -11,7 +12,7 @@ export default function Hero() {
         </p>
         <button className="browse-btn">Browse Competitions</button>
       </div>
-      <img src={heroImage} alt="Hero" />  
+     <img src={heroImage} alt="Heroes" />
     </section>
   );
 }
