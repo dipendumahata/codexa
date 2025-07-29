@@ -1,7 +1,6 @@
 import React from 'react';
 import './Hero.css';
-// import placeholder from '../assets/placeholder.png';
-import heroImage from '../assets/hero1.png';
+import heroImage from '../assets/hero1.png';  // <-- Actual image ka path
 
 export default function Hero() {
   return (
@@ -13,7 +12,7 @@ export default function Hero() {
         </p>
         <button className="browse-btn">Browse Competitions</button>
       </div>
-      <img className={heroImage}  alt="Hero" />
+      <img src={heroImage} alt="Hero" />  {/* <-- Correct image usage */}
     </section>
   );
 }
