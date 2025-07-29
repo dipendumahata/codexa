@@ -1,6 +1,7 @@
 import React from 'react';
 import './Hero.css';
 // import placeholder from '../assets/placeholder.png';
+import heroImage from '../assets/hero1.png';
 
 export default function Hero() {
   return (
@@ -12,7 +13,7 @@ export default function Hero() {
         </p>
         <button className="browse-btn">Browse Competitions</button>
       </div>
-      <img className="hero-image"  alt="Hero" />
+      <img className={heroImage}  alt="Hero" />
     </section>
   );
 }
