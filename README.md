@@ -163,14 +163,5 @@ Creates a tech ecosystem of verified, ranked talent.
 
 ---
 
-If you'd like, I can also give you:
-
-Database schema (Mongoose models)
-
-Full Express backend boilerplate
-
-React UI wireframes
-
-Deployment checklist
-Just say the word.
-
+Thankyou,
+AkshayCodex
