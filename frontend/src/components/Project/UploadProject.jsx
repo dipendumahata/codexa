@@ -30,7 +30,7 @@ function UploadProject() {
       data.append("coverImage", cover);
       data.append("stars", Math.floor(Math.random() * 300));
 
-      await axios.post(`${API_URL}/api/check-auth-status`, data,{
+      await axios.post(`${API_URL}/api/projects/uploadproject`, data,{
         headers:{
           "Content-Type":"multipart/form-data",
         },
