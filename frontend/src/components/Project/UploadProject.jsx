@@ -23,7 +23,7 @@ function UploadProject() {
       data.append("title", form.title);
       data.append("description", form.description);
       data.append("price", form.price);
-      data.append("owner", ownerId);
+      data.append("owner", form.owner);
       data.append("tags", form.tags);
       data.append("learning", form.learning);
       data.append("logoImage", logo);

@@ -16,13 +16,21 @@ const app = express();
 connectDb();
 app.use(express.json());
 
+// ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
   "https://code-bazaar-student-project-showcas.vercel.app"
 ];
 
+// ✅ Proper CORS handling for multiple domains
 app.use(cors({
-  origin: allowedOrigins,
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error(`CORS blocked: ${origin}`));
+    }
+  },
   credentials: true,
   methods: ["GET", "POST", "PUT", "DELETE"],
   allowedHeaders: ["Content-Type", "Authorization"]
@@ -31,18 +39,18 @@ app.use(cors({
 // ✅ Parse cookies
 app.use(cookieParser());
 
-// API Routes
+// Routes
 app.use("/api/photos", require("./router/photoRoute"));
 app.use("/api/hackathons", hackathonRoutes);
 app.use("/api/projects", ProjectRoutes);
 app.use("/api", authRoutes);
 
-// ✅ Check auth status
+// ✅ Auth check route
 app.get("/api/check-auth-status", auth, (req, res) => {
   res.status(200).json({ isLoggedIn: true, user: req.user });
 });
 
-// ✅ Logged-in user info (fix for 404 in frontend)
+// ✅ Fix for frontend `/api/me`
 app.get("/api/me", auth, (req, res) => {
   res.status(200).json(req.user);
 });
@@ -50,5 +58,5 @@ app.get("/api/me", auth, (req, res) => {
 // Start Server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
-  console.log(`Server is listening on Port ${PORT}`);
+  console.log(`Server running on port ${PORT}`);
 });
