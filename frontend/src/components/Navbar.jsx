@@ -30,7 +30,7 @@ function Navbar({ user, setuser }) {
   return (
     <nav className="navbar">
       <div className="navbar-container">
-        <div className="logo" onClick={() => navigate("/")}>CodeBazaar</div>
+        <div className="logo" onClick={() => navigate("/")}>Codexa</div>
 
         <ul className="nav-links">
           <li><a onClick={() => navigate("/getallprojects")}>Projects</a></li>
