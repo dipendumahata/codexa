@@ -18,7 +18,7 @@ app.use(express.json());
 
 // ✅ Allowed Origins
 const allowedOrigins = [
-  "https://codexa-rho.vercel.app/"
+  "https://codexa-rho.vercel.app"
 ];
 
 // ✅ Proper CORS handling for multiple domains
