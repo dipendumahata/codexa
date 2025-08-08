@@ -59,7 +59,7 @@ function ProjectsShowcase() {
           <h3>Paid Video Tutorials</h3>
           <p>Upload tutorials. Participants get 90% revenue.</p>
           <div className="tutorial-image">
-            {/* YouTube video embed */}
+            {/* YouTube video embed
             <iframe
   width="100%"
   height="140"
@@ -68,8 +68,7 @@ function ProjectsShowcase() {
   frameBorder="0"
   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
   allowFullScreen
-></iframe>
-
+></iframe> */}
           </div>
         </div>
 
