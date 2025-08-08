@@ -19,7 +19,7 @@ app.use(express.json());
 // ✅ Allowed Origins
 const allowedOrigins = [
   "http://localhost:5173",
-  // "https://code-bazaar-student-project-showcas.vercel.app"
+  "https://codexa-rho.vercel.app/api"
 ];
 
 // ✅ Proper CORS handling for multiple domains
